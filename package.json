@@ -1,7 +1,7 @@
 {
-  "name": "serverless-notes",
+  "name": "serverless-to-dos",
   "version": "1.1.0",
-  "description": "Serverless Note Taking App",
+  "description": "Serverless Note To Do App",
   "main": "handler.js",
   "scripts": {
     "test": "jest"
@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/serranoarevalo/serverless-notes.git"
+    "url": "https://github.com/serranoarevalo/serverless-to-do"
   },
   "devDependencies": {
     "aws-sdk": "^2.449.0",

@@ -1,6 +1,6 @@
-# Serverless Notes
+# Serverless To Do
 
-Serverless Note Taking App using
+Serverless To Do App using
 
 * Serverless Framework
 * DynamoDB
