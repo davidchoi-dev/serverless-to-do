@@ -1,23 +1,22 @@
-import uuid from "uuid";
 import { callDB } from "./libs/dynamodb";
 import { success, failure } from "./libs/responses";
 
 export async function main(event) {
-  const body = JSON.parse(event.body);
   const params = {
     TableName: "notes",
-    Item: {
+    Key: {
       userId: event.requestContext.identity.cognitoIdentityId,
-      noteId: uuid.v1(),
-      content: body.content,
-      attachment: body.attachment,
-      createdAt: Date.now()
+      noteId: event.pathParameters.id
     }
   };
 
   try {
-    await callDB("put", params);
-    return success(params.Item);
+    const result = await callDB("get", params);
+    if (result.Item) {
+      return success(result.Item);
+    } else {
+      return failure({ status: false, error: "Item not found" });
+    }
   } catch (e) {
     console.log(e);
     return failure({ status: false });
