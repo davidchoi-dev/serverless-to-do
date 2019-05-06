@@ -11,7 +11,7 @@ export function main(event, context, callback) {
       userId: event.requestContext.identity.cognitoIdentityId,
       noteId: uuid.v1(),
       content: body.content,
-      attachment: data.attachment,
+      attachment: body.attachment,
       createdAt: Date.now()
     }
   };

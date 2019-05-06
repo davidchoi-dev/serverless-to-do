@@ -15,6 +15,7 @@ provider:
   stage: dev
   region: ap-northeast-2
   environment: ${file(env.yml):${self:provider.stage}}
+  profile: ssbook
 
   iamRoleStatements:
     - Effect: Allow
